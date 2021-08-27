@@ -1,4 +1,4 @@
-# Deep Probabilistic Learning for Hacking Car
+# Deep Probabilistic Learning for Car Hacking Analysis
 
 ### 1. Download Data
 - Request data by access [Car-Hacking Dataset for the intrusion detection](https://ocslab.hksecurity.net/Datasets/CAN-intrusion-dataset)
