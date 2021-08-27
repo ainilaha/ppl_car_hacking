@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.utils import shuffle
 from sklearn.preprocessing import LabelBinarizer
+from sklearn.preprocessing import MinMaxScaler
 
 
 class DataUtil:
@@ -11,7 +12,12 @@ class DataUtil:
         self.n_time_step = n_time_step
         self.n_features = n_features
         self.col_names = ['time_stamp', 'id', 'dlc', 'd0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'R']
+        self.label_to_activity = {0: 'DoS', 1: 'Fuzzy', 2: 'RPM', 3: 'gear', 4: 'Normal'}
+        self.activity_to_label = {'DoS':0, 'Fuzzy':1, 'RPM':2, 'gear':3, 'Normal':4}
+        self.scale_colums = ['id', 'd0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7']
+        self.scaler = MinMaxScaler()
         self.final_data = None
+
 
     def create_int_feature(self, data_frame, label):
         data_frame = data_frame.dropna()
@@ -19,6 +25,7 @@ class DataUtil:
         row_num = data_frame.shape[0]
         for col in data_frame.columns:
             data_frame[col] = data_frame[col].apply(int, base=16)
+        data_frame[self.scale_colums] = self.scaler.fit_transform(data_frame[self.scale_colums])
         for i in range(0, row_num, self.n_time_step):
             if row_num >= i + self.n_time_step:
                 tem_file = data_frame.iloc[i:i + self.n_time_step, :].values
@@ -33,7 +40,7 @@ class DataUtil:
                 dos_data = pd.read_csv(file_path, nrows=self.n_row, header=None)
                 dos_data.columns = self.col_names
                 dos_data = dos_data.drop(['time_stamp', 'dlc', 'R'], axis=1)
-                dos_feature_df = self.create_int_feature(dos_data, "dos")
+                dos_feature_df = self.create_int_feature(dos_data, "DoS")
                 feature_df.append(dos_feature_df)
             elif 'Fuzzy'.lower() in file_path.lower():
                 fuzzy_data = pd.read_csv(file_path, nrows=self.n_row, sep=',', header=None)
@@ -63,12 +70,11 @@ class DataUtil:
         if is_shuffle:
             self.final_data = shuffle(self.final_data)
         return self.final_data
-
     def get_train_data(self):
-        encoder = LabelBinarizer()
+        onehot_encoder = LabelBinarizer()
         features = np.concatenate(self.final_data.features.values)
         features = features.reshape(-1, self.n_time_step, self.n_features)
-        transfomed_label = encoder.fit_transform(self.final_data.label)
+        transfomed_label = onehot_encoder .fit_transform(self.final_data.label)
         return features, transfomed_label
 
 
