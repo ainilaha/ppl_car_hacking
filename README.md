@@ -1,5 +1,10 @@
-# ppl_car_hacking
-### install required libraries
+# Deep Probabilistic Learning for Hacking Car
+
+### 1. Download Data
+- Request data by access [Car-Hacking Dataset for the intrusion detection](https://ocslab.hksecurity.net/Datasets/CAN-intrusion-dataset)
+- Download the data files and save them into `data` folder
+
+### 2. install required libraries
 - `pip install pandas`
 - `pip install numpy`
 - `pip install matplotlib`
@@ -7,7 +12,8 @@
 - `pip install tensorflow-gpu`
 - `pip install --upgrade tensorflow-probability`
 
-### format the normal action data set
+### 3. Covert Attack-free(normal) text file to CSV
+One way to process  is:
 On linux run the follow code to convert txt file format to csv file
 
 Original format:
@@ -23,3 +29,4 @@ Expected format:
 - `sed -i 's/        ID: /,/g' normal_run_data.txt`
 - `sed -i 's/    000    DLC: /,/g' normal_run_data.txt`
 - `sed -i 's/    /,/g' normal_run_data.txt`
+- `sed -i 's/ /,/g' normal_run_data.txt`
