@@ -18,7 +18,6 @@ class DataUtil:
         self.scaler = MinMaxScaler()
         self.final_data = None
 
-
     def create_int_feature(self, data_frame, label):
         data_frame = data_frame.dropna()
         feature_list = []
