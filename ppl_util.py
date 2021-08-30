@@ -20,6 +20,7 @@ class DataUtil:
 
     def create_int_feature(self, data_frame, label):
         data_frame = data_frame.dropna()
+        data_frame.reset_index(drop=True, inplace=True)
         feature_list = []
         row_num = data_frame.shape[0]
         for col in data_frame.columns:

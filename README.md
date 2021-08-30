@@ -4,13 +4,22 @@
 - Request data by access [Car-Hacking Dataset for the intrusion detection](https://ocslab.hksecurity.net/Datasets/CAN-intrusion-dataset)
 - Download the data files and save them into `data` folder
 
-### 2. install required libraries
+### 2. install required libraries 
+#### 1) for ENV 1
 - `pip install pandas`
 - `pip install numpy`
 - `pip install matplotlib`
 - `pip install sklearn`
 - `pip install tensorflow-gpu`
 - `pip install --upgrade tensorflow-probability`
+- #### 2) for ENV 2
+- `pip install pandas`
+- `pip install numpy`
+- `pip install matplotlib`
+- `pip install sklearn`
+- `conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia`
+- `pip install pyro-ppl`
+- `pip install gpytorch`
 
 ### 3. Covert Attack-free(normal) text file to CSV
 One way to process  is:
