@@ -1,4 +1,20 @@
 # Deep Probabilistic Learning for Car Hacking Analysis
+Please cite the following paper if you use our code. 
+
+Laha Ale, Scott A. King, and Ning Zhang, "Deep Bayesian Learning for Car Hacking Detection", *Bayesian Deep Learning Workshop, 35th Conference on Neural Information Processing Systems*
+
+
+bibtex for citing the paper: 
+
+`
+@InProceedings{aleneurips2021,
+  title = 	 {Deep Bayesian Learning for Car Hacking Detection,
+  author = 	 {Laha Ale, Scott King, and Ning Zhang},
+  booktitle = 	 {Bayesian Deep Learning Workshop, 35th Conference on Neural Information Processing Systems},
+  year = 	 {2021},
+  month = 	 {6--12 Dec}
+}
+`
 
 ### 1. Download Data
 - Request data by access [Car-Hacking Dataset for the intrusion detection](https://ocslab.hksecurity.net/Datasets/CAN-intrusion-dataset)
