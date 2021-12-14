@@ -57,5 +57,5 @@ Expected format:
 - `sed -i 's/ /,/g' normal_run_data.txt`
 
 ### 4. Play with notebooks
-    - bayesian_net.ipynb
-    - .l..
+    - eg. [bayesian_net.ipynb](https://github.com/ainilaha/ppl_car_hacking/blob/main/bayesian_net.ipynb)
+    - ....
