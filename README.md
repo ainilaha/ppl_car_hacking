@@ -59,4 +59,4 @@ Expected format:
 ### 4. Play with notebooks
 - [int_data_small.ipynb](https://github.com/ainilaha/ppl_car_hacking/blob/main/int_data_small.ipynb)
 - [bayesian_net.ipynb](https://github.com/ainilaha/ppl_car_hacking/blob/main/bayesian_net.ipynb)
-- [....](https://github.com/ainilaha/ppl_car_hacking)
+- [.... more](https://github.com/ainilaha/ppl_car_hacking)
