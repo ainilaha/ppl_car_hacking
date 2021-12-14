@@ -55,3 +55,7 @@ Expected format:
 - `sed -i 's/    000    DLC: /,/g' normal_run_data.txt`
 - `sed -i 's/    /,/g' normal_run_data.txt`
 - `sed -i 's/ /,/g' normal_run_data.txt`
+
+### 4. Play with notebooks
+    - bayesian_net.ipynb
+    - .l..
